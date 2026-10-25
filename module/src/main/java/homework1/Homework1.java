@@ -38,7 +38,7 @@ public class Homework1 {
         else if (score >= 61 && score <= 80) {
             return "B";
         }
-        else if (score >= 81 && score <= 10) {
+        else if (score >= 81 && score <= 100) {
             return "A";
         }
         else {
