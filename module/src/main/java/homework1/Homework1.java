@@ -12,7 +12,7 @@ public class Homework1 {
 
     //Задача 2
     public static String checkAccess(int age) {
-        if (age >= 18) {
+        if (age > 18) {
             return "Allowed";
         }
         else {

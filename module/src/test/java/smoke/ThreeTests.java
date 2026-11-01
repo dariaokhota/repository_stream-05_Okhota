@@ -21,14 +21,13 @@ public class ThreeTests {
 
     @BeforeEach
     void eachTestStart() {
-        System.out.println("=================");
-        System.out.println("Test method start");
+        System.out.println("=================\nTest method start");
     }
 
     // boolean isEven(int n) — запустить метод один раз со случайным числом от 1 до 100;
     @Test
     void testOneResult() {
-        int randomNumber = new Random().nextInt(1,100);
+        int randomNumber = new Random().nextInt(1,101);
         System.out.println("Random number: " + randomNumber);
         System.out.println("Result: " + isEven(randomNumber));
     }
@@ -36,7 +35,7 @@ public class ThreeTests {
     //String checkAccess(int age) — запустить метод 20 раз со случайными числами от 0 до 99;
     @RepeatedTest(20)
     void testTwoResult() {
-        int randomAge = new Random().nextInt(0,99);
+        int randomAge = new Random().nextInt(0,100);
         System.out.println("Random age: " + randomAge);
         System.out.println("Result: " + checkAccess(randomAge));
     }
@@ -45,7 +44,7 @@ public class ThreeTests {
     static Stream<Arguments> randomScores() {
         Random random = new Random();
         int numberOfTests = 5;
-        return IntStream.range(0,numberOfTests).mapToObj(i -> Arguments.of(random.nextInt(0,100)));
+        return IntStream.range(0,numberOfTests).mapToObj(i -> Arguments.of(random.nextInt(0,101)));
     }
 
     @ParameterizedTest
@@ -58,7 +57,6 @@ public class ThreeTests {
 
     @AfterEach
     void eachTestEnd() {
-        System.out.println("Test method end");
-        System.out.println("=================");
+        System.out.println("Test method end\n=================");
     }
 }
